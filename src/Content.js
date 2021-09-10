@@ -10,19 +10,26 @@ export function Content() {
     setInputValue(input.current.value)
   }
 
+  const submit = (event) => {
+    event.preventDefault()
+    generate()
+  }
+
   return (
     <>
-      <div className="Form">
+      <div className="FormWrapper">
         <h1 className="Title">Generate QR Code</h1>
-        <input
-          ref={input}
-          className="InputField"
-          type="text"
-          placeholder="Text to generate QR code from"
-        />
-        <button className="SubmitButton" type="button" onClick={generate}>
-          Generate
-        </button>
+        <form onSubmit={submit} className="Form">
+          <input
+            ref={input}
+            className="InputField"
+            type="text"
+            placeholder="Text to generate QR code from"
+          />
+          <button className="SubmitButton" type="submit">
+            Generate
+          </button>
+        </form>
       </div>
       <QRCode input={inputValue} />
     </>

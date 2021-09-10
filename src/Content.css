@@ -1,6 +1,11 @@
-.Form {
+.Form,
+.FormWrapper {
   display: flex;
   flex-direction: column;
+}
+
+.FormWrapper {
+  margin-top: 2rem;
 }
 
 @media (min-width: 800px) {
@@ -8,7 +13,10 @@
     align-self: center;
   }
 
-  .Form {
+  .FormWrapper {
     justify-content: center;
+
+    margin-right: 4rem;
+    margin-top: 0;
   }
 }
