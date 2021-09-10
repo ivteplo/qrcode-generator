@@ -9,7 +9,7 @@
 }
 
 @media (min-width: 800px) {
-  .QR {
+  .QRCodeWrapper {
     align-self: center;
   }
 

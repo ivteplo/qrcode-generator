@@ -10,6 +10,11 @@
   --background-darker: #eee;
   --foreground: #333;
 
+  --qr-code-light-foreground: #333;
+  --qr-code-light-background: #fff;
+  --qr-code-dark-foreground: #f5f5f5;
+  --qr-code-dark-background: #1b1b2a;
+
   color: var(--foreground);
   background: var(--background);
 
@@ -56,6 +61,7 @@
 .SubmitButton {
   background-color: var(--primary);
   color: var(--background);
+  justify-content: center;
 
   padding: 0.5rem 1rem;
   border-radius: 2rem;

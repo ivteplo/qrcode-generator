@@ -1,6 +1,25 @@
+.QRCodeWrapper {
+  flex-shrink: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .QR {
   height: 275px;
   width: 275px;
   aspect-ratio: 1;
   flex-shrink: 0;
+}
+
+.QRCodeWrapper .QRCodeActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -1rem;
+  margin-right: -1rem;
+  position: relative;
+}
+
+.QRCodeWrapper .QRCodeActions > * {
+  margin-left: 0.5rem;
 }
