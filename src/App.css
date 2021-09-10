@@ -12,6 +12,8 @@
 
   color: var(--foreground);
   background: var(--background);
+
+  flex-direction: column-reverse;
 }
 
 @media (prefers-color-scheme: dark) {
