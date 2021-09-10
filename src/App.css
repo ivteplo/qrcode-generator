@@ -31,11 +31,6 @@
   font-size: 2rem;
 }
 
-.Form {
-  display: flex;
-  flex-direction: column;
-}
-
 .InputField {
   margin-bottom: 0.5rem;
 
@@ -77,26 +72,11 @@
   background-color: var(--primary-darker);
 }
 
-.QR {
-  height: 275px;
-  width: 275px;
-  aspect-ratio: 1;
-  flex-shrink: 0;
-}
-
 @media (min-width: 800px) {
   .App {
     flex-direction: row;
     align-items: stretch;
     justify-content: space-around;
     box-sizing: border-box;
-  }
-
-  .QR {
-    align-self: center;
-  }
-
-  .Form {
-    justify-content: center;
   }
 }

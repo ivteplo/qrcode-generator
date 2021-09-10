@@ -1,6 +1,7 @@
 import { ThemeContext } from "./ThemeProvider"
 import { useEffect, useRef, useContext } from "react"
 import QRCode from "qrcode"
+import "./Content.css"
 
 export function Content() {
   const { getColor } = useContext(ThemeContext)
