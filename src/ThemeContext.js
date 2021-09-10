@@ -2,7 +2,9 @@ import { useEffect, createContext, useState } from "react"
 
 export const ThemeContext = createContext({})
 
-export function ThemeProvider({ children, getColor }) {
+export default ThemeContext
+
+export function ThemeProvider({ children, getColors }) {
   const [theme, setTheme] = useState("light")
 
   const onColorSchemeChange = (event) => {
@@ -21,7 +23,7 @@ export function ThemeProvider({ children, getColor }) {
   }, [])
 
   return (
-    <ThemeContext.Provider value={{ theme, getColor }}>
+    <ThemeContext.Provider value={{ theme, colors: getColors() }}>
       {children}
     </ThemeContext.Provider>
   )

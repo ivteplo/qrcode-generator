@@ -1,22 +1,40 @@
 import { useRef } from "react"
 import "./App.css"
 import Content from "./Content"
-import { ThemeProvider } from "./ThemeProvider"
+import { ThemeProvider } from "./ThemeContext"
 
 function App() {
   const app = useRef()
 
   const getColor = (color) =>
-    getComputedStyle(app.current)
-      .getPropertyValue("--" + color)
-      .trim()
+    app.current
+      ? getComputedStyle(app.current)
+          .getPropertyValue("--" + color)
+          .trim()
+      : ""
+
+  const getColors = () => {
+    const colors = [
+      "primary",
+      "primary-darker",
+      "inactive-border",
+      "background",
+      "background-darker",
+      "foreground",
+    ]
+
+    return colors.reduce(
+      (prev, color) => ({ ...prev, [color]: getColor(color) }),
+      {}
+    )
+  }
 
   return (
-    <ThemeProvider getColor={getColor}>
-      <div className="App" ref={app}>
+    <div className="App" ref={app}>
+      <ThemeProvider getColors={getColors}>
         <Content />
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </div>
   )
 }
 

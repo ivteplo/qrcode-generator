@@ -1,0 +1,6 @@
+.QR {
+  height: 275px;
+  width: 275px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
