@@ -5,7 +5,7 @@ import { ThemeProvider } from "./ThemeContext"
 
 const toCamelCase = (str) =>
   str
-    .replace(/\-/g, " ")
+    .replace(/-/g, " ")
     .trim()
     .split(" ")
     .map((word, index) =>
