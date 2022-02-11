@@ -4,6 +4,11 @@
 
 This project is a web application for generating QR codes. It supports both light and dark themes, has responsive user interface, and works well on both mobile and desktop.
 
+## Preview
+
+![How the app looks like on desktop (light theme)](screenshots/preview-desktop-light.png)
+![How the app looks like on desktop (dark theme)](screenshots/preview-desktop-dark.png)
+
 ## Development
 
 ### Requirements

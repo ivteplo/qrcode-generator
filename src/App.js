@@ -1,7 +1,9 @@
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
+
 import "./App.css"
-import Content from "./Content"
+
 import { ThemeProvider } from "./ThemeContext"
+import Content from "./Content"
 
 const toCamelCase = (str) =>
   str
@@ -17,6 +19,7 @@ const toCamelCase = (str) =>
 
 function App() {
   const app = useRef()
+  const [mounted, setMounted] = useState(false)
 
   const getColor = (color) =>
     app.current
@@ -45,11 +48,18 @@ function App() {
     )
   }
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <div className="App" ref={app}>
-      <ThemeProvider getColors={getColors}>
-        <Content />
-      </ThemeProvider>
+      {
+        mounted &&
+        <ThemeProvider getColors={getColors}>
+          <Content />
+        </ThemeProvider>
+      }
     </div>
   )
 }
